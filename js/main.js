@@ -7,7 +7,7 @@ $(document).on('ready', function(){
   var searchImages = function(tags) {
     //Define the location of the Yelp API.
     var yelpAPI = "https://api.yelp.com/v2/search/?location=Seattle,Wa";
-    $('#userSearch').innerHTML = '<li class="search-throbber">Searching...</li>';
+    $('#results').innerHTML = '<li class="search-throbber">Searching...</li>';
     //Construct a `$.getJSON()` call where you send a request object including the tags the user submitted
     $.getJSON( yelpAPI, {
       tags: tags,
