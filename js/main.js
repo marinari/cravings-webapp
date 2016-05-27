@@ -39,10 +39,10 @@ $(document).on('ready', function(){
                 'method' : 'GET',
                 'parameters' : parameters
             };
-
+            /*
             OAuth.setTimestampAndNonce(message);
             OAuth.SignatureMethod.sign(message, accessor);
-
+            */
             var parameterMap = OAuth.getParameterMap(message.parameters);
             console.log(parameterMap);
 
