@@ -1,8 +1,3 @@
-// Asynchronous Flickr Search
-
-$(document).on('ready', function(){
-  //test to always make sure js is working in browser
-  console.log('b');
 
   function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -66,5 +61,3 @@ $(document).on('ready', function(){
           map.fitBounds(bounds);
         });
       }
-
-});
