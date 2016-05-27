@@ -42,10 +42,10 @@ $(document).on('ready', function(){
             /*
             OAuth.setTimestampAndNonce(message);
             OAuth.SignatureMethod.sign(message, accessor);
-            */
+
             var parameterMap = OAuth.getParameterMap(message.parameters);
             console.log(parameterMap);
-
+            */
             $.ajax({
                 'url' : message.action,
                 'data' : parameterMap,
