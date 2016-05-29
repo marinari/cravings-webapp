@@ -19,7 +19,10 @@ body {
 }
 
 #map {
-        height: 100%;
+  width: 500px;
+  height: 400px;
+  /*remove once done testing div appearance*/
+  background-color: #CCC;
       }
 
 .controls {
@@ -32,7 +35,7 @@ body {
         outline: none;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
       }
-      #pac-input {
+      #mapsearch {
               background-color: #fff;
               font-family: arial;
               font-size: 15px;
@@ -42,12 +45,8 @@ body {
               width: 50%;
             }
 
-            #pac-input:focus {
+            #mapsearch:focus {
               border-color: #4d90fe;
-            }
-
-            .pac-container {
-              font-family: arial;
             }
 
             #type-selector {
