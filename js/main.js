@@ -1,21 +1,44 @@
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+//<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-$(document).on('ready', function(){
-  //test to always make sure js is working in browser
-  console.log('console log functions working');
+var map;
+var infowindow;
 
-  //create a function called `searchImages()`. Accept a string value called `tags` as an argument.
-  var searchImages = function(tags) {
-    //Define the location of the Yelp API.
-    var yelpAPI = "https://api.yelp.com/v2/search/?location=Seattle,Wa";
-    $('#userSearch').innerHTML = '<li class="search-throbber">Searching...</li>';
-    //Construct a `$.getJSON()` call where you send a request object including the tags the user submitted
-    $.getJSON( yelpAPI, {
-      tags: tags,
-      tagmode: "any",
-      format: "json"
-      //a `done()` handler that displays and refreshes the content appropriately.
-    }).done(function( data ) {
-      console.log('getting data');
-    })
+function initMap() {
+  var pyrmont = {lat: 47.611429, lng: -122.334493};
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: pyrmont,
+    zoom: 15
+  });
+
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch({
+    location: pyrmont,
+    radius: 500,
+    type: ['store']
+  }, callback);
+}
+
+function callback(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
   }
-});
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
