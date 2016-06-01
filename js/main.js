@@ -1,5 +1,11 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg6qYb_16sAfj0eVGUEblng9KwadURh08&libraries=places"></script>
-
+var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+/*
 var map;
 var infowindow;
 
@@ -40,3 +46,4 @@ function createMarker(place) {
     infowindow.open(map, this);
   });
 }
+*/
