@@ -8,11 +8,12 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/global.css">
+    <script src="js/main.js"></script>
   </head>
   <body>
-    <input id="mapsearch" class="controls" type="text" placeholder="Search Box">
+    <input id="mapsearch" class="controls" type="text" placeholder="What are you craving?">
+    <button id="submit" onclick="cabinet()">Go!</button>
     <div id="map"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg6qYb_16sAfj0eVGUEblng9KwadURh08&libraries=places&callback=initMap" async defer></script>
-    <script src="js/main.js"></script>
   </body>
 </html>
