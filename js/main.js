@@ -4,12 +4,68 @@ var seattle;
 var input;
 //this is an init function I don't need to use document ready
 function initMap() {
+  //custom styles for the map must be defined before map is loaded
+  var stylesArray = [
+        {
+            "featureType":"landscape",
+            "stylers":[
+              {"hue":"#FFBB00"},
+              {"saturation": 43.400000000000006},
+              {"lightness":37.599999999999994},
+              {"gamma":1}
+          ]
+          },{
+            "featureType": "road.highway",
+              "stylers":[
+                {"hue":"#FFC200"},
+                {"saturation":-61.8},
+                {"lightness":45.599999999999994},
+                {"gamma":1}
+              ]
+          },
+          {
+            "featureType": "road.arterial",
+            "stylers": [
+              {"hue":"#FF0300"},
+              {"saturation":-100},
+              {"lightness":51.19999999999999},
+              {"gamma":1}
+          ]
+        },{
+          "featureType":"road.local",
+          "stylers": [
+            {"hue":"#FF0300"},
+            {"saturation":-100},
+            {"lightness":52},
+            {"gamma":1}
+          ]
+        },{
+          "featureType":"water",
+          "stylers": [
+            {"hue":"#0078FF"},
+            {"saturation":-13.200000000000003},
+            {"lightness":2.4000000000000057},
+            {"gamma":1}
+          ]
+        },{
+          "featureType":"poi",
+          "stylers":[
+            {"hue":"#00FF6A"},
+            {"saturation":-1.0989010989011234},
+            {"lightness":11.200000000000017},
+            {"gamma":1}
+          ]
+        }
+      ];
+        //draws the map using custom lat and long
         seattle = new google.maps.LatLng (47.611429,-122.334493);
         //defines the map settings and placement within the html document
         map = new google.maps.Map(document.getElementById('map'), {
           center: seattle,
           zoom: 13
         });
+        //changes map styles to custom map styles
+        map.setOptions({styles: stylesArray });
 
         //these are default settings from google places api, afraid to break the code by changing or removing them
         var defaultBounds = new google.maps.LatLngBounds(
