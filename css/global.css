@@ -157,6 +157,12 @@ footer {
         color: #DBFFF4;
         border-top: 1px solid #DBFFF4;
 }
+.social {
+  text-align: center;
+}
+.social li {
+  display: inline;
+}
 
 
 /*mobile device styles*/

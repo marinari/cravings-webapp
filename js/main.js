@@ -87,7 +87,8 @@ function cabinet(){
       //makes the query whatever text string the user enters instead of something static
       query: input.value,
       //filter results, the Places api also includes non-food related places, the results will not include them
-      types: ['grocery_or_supermarket'|'restaurant'|'meal_delivery']
+      types: ['grocery_or_supermarket'|'restaurant'|'meal_delivery'],
+      openNow: true
     };
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
