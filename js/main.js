@@ -78,16 +78,7 @@ function initMap() {
           bounds: defaultBounds
         });
       }
-      //defines how the results are shown
-      function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-          //made the results limit 10 instead of infinte loop
-          for (var i = 0; i < 10; i++) {
-            var place = results[i];
-            console.log(place);
-          }
-        }
-      }
+
 //runs when the user clicks the submit button
 function cabinet(){
   var request = {
@@ -101,4 +92,14 @@ function cabinet(){
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
   console.log('the go button works');
+  //defines how the results are shown
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      //made the results limit 10 instead of infinte loop
+      for (var i = 0; i < 10; i++) {
+        var place = results[i];
+        console.log(place);
+      }
+    }
+  }
 }
