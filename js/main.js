@@ -67,16 +67,13 @@ function initMap() {
         //changes map styles to custom map styles
         map.setOptions({styles: stylesArray });
 
-        //these are default settings from google places api, afraid to break the code by changing or removing them
-        var defaultBounds = new google.maps.LatLngBounds(
-          new google.maps.LatLng(-33.8902, 151.1759),
-          new google.maps.LatLng(-33.8474, 151.2631));
-
         //defines the input variable for the search box input field in the html document
         input = document.getElementById('mapsearch');
+        /*auto complete functionality for input field, not working for seattle only right now
         var searchBox = new google.maps.places.SearchBox(input, {
-          bounds: defaultBounds
-        });
+          location: google.maps.LatLng (47.611429,-122.334493),
+          radius: '1000'
+        });*/
 
       }
 
@@ -87,7 +84,6 @@ function cabinet(){
       radius: '500',
       //makes the query whatever text string the user enters instead of something static
       query: input.value,
-      openNow: true,
       //filter results, the Places api also includes non-food related places, the results will not include them
       types: ['grocery_or_supermarket'|'restaurant'|'meal_delivery']
     };
@@ -95,17 +91,18 @@ function cabinet(){
     var service = new google.maps.places.PlacesService(map);
     service.textSearch(request, callback);
     console.log('the go button works');
+  }
 
-    //defines how the results are shown
-    function callback(results, status) {
-      if (status == google.maps.places.PlacesServiceStatus.OK) {
-        //made the results limit 10 instead of infinte loop
-        for (var i = 0; i < 10; i++) {
-          var place = results[i];
-          console.log(place);
-          var placesList = document.getElementById('results');
-          placesList.innerHTML += '<li>' + place.name + '</li>';
-        }
+  //defines how the results are shown
+function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      var placesList = document.getElementById('results');
+      //made the results limit 10 instead of infinte loop
+      for (var i = 0; i < 10; i++) {
+        var place = results[i];
+        //show unformatted results in console to make sure it works
+        console.log(place);
+        placesList.innerHTML += '<li>' + place.name + " | " + place.rating + " | " + place.price_level + " | " + place.formatted_address + '</li>';
       }
     }
-  }
+}

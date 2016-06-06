@@ -139,26 +139,24 @@ button::-moz-focus-inner{
             #target {
               width: 345px;
             }
-#bottom-panel {
-  height: 400px;
-}
+
 #results ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
-        height: 271px;
-        width: 200px;
         overflow-y: scroll;
+        color: #E8DDBE;
       }
       #results li {
-        background-color: #f1f1f1;
+        background-color: #E8DDBE;
         padding: 10px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        color: #68798C;
       }
       #results li:nth-child(odd) {
-        background-color: #fcfcfc;
+        background-color: #F8F2E4;
       }
 footer {
         /*position: absolute;*/
