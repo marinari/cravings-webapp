@@ -6,15 +6,17 @@
     <title>Cravings Web App</title>
     <meta name="description" content="Protype web app that returns restaurant results based on what you're craving. Uses Google Places API.">
     <!--tag so that the site is fullscreen on mobile devices-->
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/global.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id=pageWrapper>
-      <span class="glyphicon-fire">&#xe104;</span>
+      <span class="glyphicon glyphicon-fire custom"></span>
       <h1>What are you craving today?</h1>
       <h2>I could really go for:</h2>
       <input id="mapsearch" class="controls" type="text" placeholder="soup, french toast, pickles, sausage">
@@ -24,14 +26,28 @@
         <ul id="results"><h3>Restaurant Name | Rating(0-5) | Price (0-4)| Address</h3></ul>
       </div>
 
-      <footer>
-        <p>
-        Google Map Styles 'Light Dream' from user 'Roberta' created Sept 12, 2014 <a href="http://www.snazzymaps.com/style/134/light-dream">original source</a><br>
-        Project for Seattle University Web Development Program by <a href="http://www.ariannamarin.us">Arianna Marin</a><br>
-        Website designed by <a href="http://www.kimoymarin.com">Kimoy Marin</a><br>
-        Last Updated June 2016<br>
-        <a href="https://github.com/marinari/cravings-webapp">View on Github</a></p>
-        <img src="images/powered_by_google_on_non_white.png"></img>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+                  <div class="col-md-4">
+                    <p>Google Map Style: 'Light Dream' by 'Roberta': <a href="http://www.snazzymaps.com/style/134/light-dream">Source</a><br>
+                    Created within curriculum Seattle University Web Development Program by Arianna Marin<br>
+                    <img src="images/powered_by_google_on_non_white.png"></img></p>
+                  </div>
+                  <div class="col-md-4">
+                  <p>Website layout designed by Kimoy Marin<br>
+                  Implemented by Arianna Marin using Bootstrap and custom styles<br>
+                  Last Updated June 2016</p>
+                  </div>
+                  <div class="col-md-4">
+                    <ul>Connect with the Creators:
+                      <li><a href="http://www.kimoymarin.com">Kimoy Website</a></li>
+                      <li><a href="http://www.ariannamarin.us">Arianna Website</a></li>
+                      <li><a href="http://www.twitter.com/guavah_go">Twitter</a></li>
+                    </ul>
+                  </div>
+                </div>
+          </div>
       </footer>
     </div>
 
