@@ -97,7 +97,7 @@ function cabinet(){
     console.log('the go button works');
 
     //defines how the results are shown
-    function callback(results, status,) {
+    function callback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         //made the results limit 10 instead of infinte loop
         for (var i = 0; i < 10; i++) {
