@@ -95,19 +95,16 @@ function cabinet(){
     var service = new google.maps.places.PlacesService(map);
     service.textSearch(request, callback);
     console.log('the go button works');
-    
-    function displayResults(places) {
-      var placesList = document.getElementById('results');
-        placesList.innerHTML += '<li>' + place.name + '</li>';
-      }
 
     //defines how the results are shown
-    function callback(results, status, displayResults) {
+    function callback(results, status,) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         //made the results limit 10 instead of infinte loop
         for (var i = 0; i < 10; i++) {
           var place = results[i];
           console.log(place);
+          var placesList = document.getElementById('results');
+          placesList.innerHTML += '<li>' + place.name + '</li>';
         }
       }
     }
