@@ -42,6 +42,8 @@ table {
 /*custom page styles*/
 body {
     background-color: #B4E3C7;
+    font-family: 'Lato', Helvetica, serif;
+    font-weight: 400;
 }
 /*div that contains entire page content
 #pageWrapper {
@@ -49,12 +51,21 @@ body {
 }*/
 h1{
   padding: 15px;
+  padding-bottom: 0;
   color: #FFF2CA; /*LIGHT BROWN*/
+  font-family: 'Lato', Helvetica, serif;
+  font-weight: 700;
   font-size: 3em;
 }
 h2 {
   display: inline;
   color: #879DC4;
+  padding-left: 25px;
+  font-size: 2em;
+}
+h3{
+  font-size: 18pt;
+  color: #F8F2E4;
   padding-left: 10px;
 }
 /*do not group the following input placeholder text rules*/
@@ -92,7 +103,7 @@ button::-moz-focus-inner{
 #map {
   padding-top: 30px;
   width: 100%;
-  height: 400px;
+  height: 350px;
   margin: 0;
   padding: 0;
 }
@@ -145,7 +156,6 @@ button::-moz-focus-inner{
         padding: 0;
         margin: 0;
         overflow-y: scroll;
-        color: #E8DDBE;
       }
       #results li {
         background-color: #E8DDBE;

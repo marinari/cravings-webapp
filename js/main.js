@@ -84,6 +84,9 @@ function cabinet(){
       radius: '500',
       //makes the query whatever text string the user enters instead of something static
       query: input.value,
+      price_level: [0|1|2|3|4],
+      rating: [0|1|2|3|4|5],
+      permanently_closed: false,
       //filter results, the Places api also includes non-food related places, the results will not include them
       types: ['grocery_or_supermarket'|'restaurant'|'meal_delivery']
     };
@@ -104,5 +107,7 @@ function callback(results, status) {
         console.log(place);
         placesList.innerHTML += '<li>' + place.name + " | " + place.rating + " | " + place.price_level + " | " + place.formatted_address + '</li>';
       }
+    } else {
+      places.List.innerHTML += '<li>' + "No Results Found" + '</li>';
     }
 }
