@@ -35,23 +35,17 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
-/*custom page styles*/
+/*fire icon for placeholder icon*/
 .glyphicon-fire {
     content: "\e104";
 }
-
+/*custom page styles*/
 body {
-    margin-bottom: 100px;
     background-color: #B4E3C7;
 }
 /*div that contains entire page content
 #pageWrapper {
-  width: 100%;
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: grey;
+  height: 100%;
 }*/
 h1{
   padding: 15px;
@@ -145,13 +139,33 @@ button::-moz-focus-inner{
             #target {
               width: 345px;
             }
-
+#bottom-panel {
+  height: 400px;
+}
+#results ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 271px;
+        width: 200px;
+        overflow-y: scroll;
+      }
+      #results li {
+        background-color: #f1f1f1;
+        padding: 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      #results li:nth-child(odd) {
+        background-color: #fcfcfc;
+      }
 footer {
-        position: absolute;
+        /*position: absolute;*/
         bottom: 0;
         width: 100%;
         /* Set the fixed height of the footer here for sticky footer */
-        height: 100px;
+        height: 120px;
         background-color: #7d9e8b; /*dark version of background color*/
         font-size: 10px;
         color: #DBFFF4;
