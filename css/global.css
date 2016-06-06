@@ -40,15 +40,17 @@ table {
     content: "\e104";
 }
 /*custom page styles*/
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
     background-color: #B4E3C7;
     font-family: 'Lato', Helvetica, serif;
     font-weight: 400;
+    min-width: 400px;
+    margin: 0 0 120px; /* bottom = footer height */
 }
-/*div that contains entire page content
-#pageWrapper {
-  height: 100%;
-}*/
 h1{
   padding: 15px;
   padding-bottom: 0;
@@ -169,26 +171,47 @@ button::-moz-focus-inner{
         background-color: #F8F2E4;
       }
 footer {
-        /*position: absolute;*/
+        position: absolute;
+        left: 0;
         bottom: 0;
         width: 100%;
         /* Set the fixed height of the footer here for sticky footer */
         height: 120px;
         background-color: #7d9e8b; /*dark version of background color*/
-        font-size: 10px;
+        font-size: 10pt;
         color: #DBFFF4;
         border-top: 1px solid #DBFFF4;
 }
+footer p {
+  text-align: justify;
+  padding-left: 40px;
+  padding-top: 10px;
+}
+footer img {
+  padding-left: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
 .social {
   text-align: center;
-}
-.social li {
-  display: inline;
 }
 
 
 /*mobile device styles*/
 @media (max-width: 600px) {
+  body{
+    font-size: 14pt;
+  }
+  h1 {
+    font-size: 18pt;
+    padding-left: 5px;
+  }
+  h2, h3 {
+    display: block;
+    font-size: 16pt;
+    padding-left: 5px;
+  }
   #map {
     height: 300px;
   }
@@ -196,10 +219,16 @@ footer {
     height: 20px;
   }
   button {
-    height: 20px;
-    font-size: 16px;
+    height: 25px;
+    padding: 5px;
+    font-size: 10pt;
+    width: 80px;
   }
   #mapsearch {
-    padding: 10px;
+    padding: 5px;
+    width: 350px;
   }
+  #results li {
+    padding: 5px;
+    font-size: 12pt;
 }
