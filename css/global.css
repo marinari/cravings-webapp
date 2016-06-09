@@ -54,8 +54,9 @@ html {
 /*reset default button styles*/
 #pageWrapper button {
   margin: 2px;
+  /*
   padding-left: 6px;
-  padding-right: 6px;
+  padding-right: 6px;*/
   border: 1px solid #DBFFF4; /*faint sky blue looks white*/
   background-color: #DBFFF4;
   font-family: inherit;
@@ -134,6 +135,7 @@ html {
         white-space: nowrap;
         overflow: hidden;
         color: #68798C;
+        width: 95%;
       }
       #results li:nth-child(odd) {
         background-color: #F8F2E4;
@@ -143,6 +145,7 @@ html {
   bottom: 0;
   width: 100%;
   height: 140px;
+  overflow: hidden;
 }
 .container { /*bootstrap footer styles*/
     width: 100%;
